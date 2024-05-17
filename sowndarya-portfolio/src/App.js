@@ -11,7 +11,9 @@ function App() {
       <Navbar />
       {/* Your other components go here */}
       <UserInfo />
+      <div className=" h-screen bg-gray-100 flex items-center justify-center">
       <SkillsInfo />
+      </div>
     </div>
   );
 }
