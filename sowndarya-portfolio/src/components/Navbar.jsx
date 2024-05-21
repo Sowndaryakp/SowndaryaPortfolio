@@ -10,8 +10,8 @@ function Navbar() {
 
   return (
     <header className="bg-white shadow-lg rounded-lg mx-auto w-10/12 h-20 mt-9 relative z-10">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full">
-        <div className="whitespace-nowrap">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full">
+      <div className="flex-1 flex items-center">
           <a href="#" className="text-2xl font-bold text-zinc-600">
             Sowndarya K P
           </a>
