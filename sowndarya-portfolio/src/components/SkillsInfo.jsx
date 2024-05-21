@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { FaHtml5, FaCss3, FaJava, FaDatabase, FaReact, FaNodeJs, FaJsSquare, FaVuejs, FaPython } from 'react-icons/fa';
-import { SiSpring, SiHibernate, SiPostgresql, SiJavascript, SiGithub, SiRest } from 'react-icons/si'; // Changed from SiRestApi to SiRest
+import { SiSpring, SiHibernate, SiPostgresql, SiJavascript, SiGithub } from 'react-icons/si';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -45,18 +45,17 @@ const SkillsCard = () => {
     { name: 'Vue.js', icon: <FaVuejs className="text-green-500" size={50} /> },
     { name: 'React Js', icon: <FaReact className="text-cyan-500" size={50} /> },
     { name: 'Axios', icon: <FaJsSquare className="text-yellow-500" size={50} /> },
-    // { name: 'Restful Web Services', icon: <SiRest className="text-blue-500" size={50} /> },
     { name: 'GitHub', icon: <SiGithub className="text-gray-800" size={50} /> },
   ];
 
   return (
-    <div className="w-full h-full flex items-center justify-center overflow-y-auto p-6">
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+    <div className="w-full h-full flex items-center justify-center p-6">
+      <div className="grid grid-cols-3 md:grid-cols-5 gap-6">
         {skills.map((skill, index) => (
           <div
             key={index}
             ref={(el) => (skillsRef.current[index] = el)}
-            className="w-40 p-4 bg-white shadow-lg rounded-lg text-center"
+            className="w-full p-4 bg-white shadow-lg rounded-lg text-center"
           >
             <div className="mb-3">{skill.icon}</div>
             <h3 className="text-xl font-semibold">{skill.name}</h3>

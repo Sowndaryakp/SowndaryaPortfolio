@@ -6,7 +6,7 @@ function Footer() {
     <footer className="bg-white py-4">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <p className="text-gray-600">&copy; 2022 codewithsadee. All rights reserved.</p>
+          <p className="text-gray-600">&copy; 2024 sowndarya kp. All rights reserved.</p>
           <div className="flex gap-2">
             <a href="#" className="text-gray-700 text-1xl transition duration-300 transform hover:-translate-y-1">
               <FaLinkedin />

@@ -1,4 +1,3 @@
-// Projects.js
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 
@@ -17,9 +16,15 @@ const projects = [
   },
   {
     title: 'Sanity Portfolio',
-    description: 'A simple portfolio template built with Sanity and Next.js',
+    description: 'A Sanity-powered portfolio site built with Next.js/TypeScript and Tailwind CSS.',
     image: 'https://placehold.co/40x40',
-    details: 'Detailed information about Sanity Portfolio project.',
+    details: `A Sanity-powered portfolio site built with Next.js/TypeScript and Tailwind CSS. I built this project to explain how to build a Portfolio Site with Sanity and Next.js, and also explain how you can set-up GROQ-powered webhooks to deploy your site on Vercel.
+    
+Technical Details:
+- Next.js: Fullstack React Framework
+- Sanity: Headless CMS for Content
+- Tailwind CSS: Styling
+- Vercel: Hosting and Deployment`,
   },
   {
     title: 'Spekni',
@@ -48,6 +53,14 @@ const descriptionClasses = 'text-white-800 white:text-gray-200';
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
+  const openModal = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
+
   return (
     <div className="bg-white-100 white:bg-white-900 text-gray-800 dark:text-gray-800 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,11 +72,15 @@ const Projects = () => {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <div key={index} className={projectCardClasses} onClick={() => setSelectedProject(project)}>
+            <div key={index} className={projectCardClasses} onClick={() => openModal(project)}>
               <img src={project.image} alt={project.title} className="w-10 h-10 mr-4" />
               <div>
                 <h3 className={titleClasses}>{project.title}</h3>
                 <p className={descriptionClasses}>{project.description}</p>
+                {/* Wrap the entire content of the card in a clickable element */}
+                <div onClick={() => openModal(project)} className="cursor-pointer">
+                  <p className="text-blue-500 underline">Read More</p>
+                </div>
               </div>
             </div>
           ))}
@@ -73,15 +90,14 @@ const Projects = () => {
         <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white white:bg-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full relative">
             <button
-              onClick={() => setSelectedProject(null)}
+              onClick={closeModal}
               className="absolute top-2 right-2 text-gray-800 dark:text-gray-200"
             >
               <FaTimes size={20} />
             </button>
             <h3 className="text-2xl font-bold mb-4">{selectedProject.title}</h3>
             <img src={selectedProject.image} alt={selectedProject.title} className="w-20 h-20 mb-4" />
-            <p className="mb-4">{selectedProject.description}</p>
-            <p>{selectedProject.details}</p>
+            <p className="mb-4">{selectedProject.details}</p>
           </div>
         </div>
       )}
