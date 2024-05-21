@@ -88,7 +88,7 @@ const UserInfo = () => {
       </button>
       <button
         ref={contactMeRef}
-        className="bg-white text-charm-600 font-semibold py-4 px-6 rounded-full border border-charm-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50"
+        className="bg-white text-charm-600 font-semibold py-4 px-6 rounded-full border border-charm-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 hover:bg-charm-500 hover:text-white transition-colors duration-200"
       >
         Contact Me
       </button>

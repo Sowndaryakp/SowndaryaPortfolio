@@ -3,14 +3,14 @@ import { FaDribbble, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 function Navbar() {
   return (
-    <div className="bg-white shadow-lg rounded-lg mx-auto w-10/12 h-16 mt-9">
+    <div className="bg-white shadow-lg rounded-lg mx-auto w-7/12 h-20 mt-9">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-full">
-        <div className="flex items-center flex-grow">
-          <a href="#" className="text-2xl font-bold text-zinc-600">
+        <div className="flex items-center justify-start flex-grow">
+          <a href="#" className="text-2xl font-bold text-zinc-600 ">
             Sowndarya K P
           </a>
         </div>
-        <div className="flex justify-center flex-grow">
+        <div className="flex items-center justify-end flex-grow">
           <nav className="hidden md:flex space-x-4">
             <a href="#" className="text-base font-medium text-zinc-500 hover:text-pink-500">
               Home
