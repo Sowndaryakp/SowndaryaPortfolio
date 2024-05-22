@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useTheme } from '../contexts/ThemeContext'; 
+import userImage from '../assets/images/sowndaryakp.jpg'; // Import the image
 
 const UserInfo = () => {
   const { darkMode } = useTheme(); 
@@ -92,7 +93,6 @@ const UserInfo = () => {
     link.download = 'resume.pdf'; // Set the desired filename for the downloaded file
     link.click();
   };
-  
 
   return (
     <div id="user-info" className={`w-full h-full ${darkMode ? 'bg-black' : 'bg-white'}`}>
@@ -101,7 +101,7 @@ const UserInfo = () => {
           <div className="flex-1 flex justify-center md:justify-start mb-6 md:mb-0">
             <div className="relative">
               <img
-                src="https://placehold.co/500x500"
+                src={userImage} // Use the imported image
                 alt="User Interface Designer"
                 className="rounded-full shadow-lg"
               />
@@ -109,14 +109,14 @@ const UserInfo = () => {
           </div>
           <div className="flex-1 md:ml-16">
             <div className="space-y-6 text-center md:text-left">
-              <h1 className={`text-4xl md:text-6xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>I'm User Interface Designer & Developer.</h1>
+              <h1 className={`text-4xl md:text-6xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>I'm Fullstack Web Developer.</h1>
               <p className={`text-lg md:text-2xl mt-4 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Hello! I’m Julia, a freelance user interface designer & developer based in London. I’m very passionate about the work that I do.
+                Hello! I’m Sowndarya K P, to exhibit expertise in Fullstack Web Development through a curated showcase of advanced projects, technical prowess, and professional achievements. Leveraging years of experience, the goal is to establish credibility, foster industry connections, and pursue opportunities for collaboration and career advancement within the software engineering domain.
               </p>
-              <div className="flex justify-center md:justify-start mt-6">
+              <div className="flex flex-row justify-center md:justify-start mt-6 space-x-4">
                 <button
                   ref={seeMyWorksRef}
-                  className={`bg-pink-500 text-white font-semibold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 mr-4 md:mr-8 ${darkMode ? 'hover:bg-pink-700' : 'hover:bg-pink-600'}`}
+                  className={`bg-pink-500 text-white font-semibold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 ${darkMode ? 'hover:bg-pink-700' : 'hover:bg-pink-600'}`}
                 >
                   See My Works
                 </button>
@@ -127,13 +127,12 @@ const UserInfo = () => {
                   Contact Me
                 </button>
                 <button
-                ref={resumeDownloadRef}
-                onClick={handleResumeDownload}
-                className={`bg-pink-500 text-white font-semibold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 hover:bg-pink-700 hover:text-white transition-colors duration-200 mt-4 md:mt-0 ml-4 md:ml-0 mr-4 md:mr-8 ${darkMode ? 'hover:bg-pink-700' : 'hover:bg-pink-600'}`}
-              >
-                Resume
-              </button>
-
+                  ref={resumeDownloadRef}
+                  onClick={handleResumeDownload}
+                  className={`bg-pink-500 text-white font-semibold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 hover:bg-pink-700 hover:text-white transition-colors duration-200`}
+                >
+                  Resume Download
+                </button>
               </div>
             </div>
           </div>

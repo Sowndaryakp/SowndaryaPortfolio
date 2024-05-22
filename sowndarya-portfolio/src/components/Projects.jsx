@@ -27,24 +27,24 @@ Technical Details:
 - Tailwind CSS: Styling
 - Vercel: Hosting and Deployment`,
   },
-  {
-    title: 'Spekni',
-    description: 'Recognition platform built for developer endorsements',
-    image: 'https://placehold.co/40x40',
-    details: 'Detailed information about Spekni project.',
-  },
-  {
-    title: 'Rocketmeme',
-    description: 'Simple and intuitive meme generator',
-    image: 'https://placehold.co/40x40',
-    details: 'Detailed information about Rocketmeme project.',
-  },
-  {
-    title: 'Currencee',
-    description: "The world's most trusted, fast and secure currency converter",
-    image: 'https://placehold.co/40x40',
-    details: 'Detailed information about Currencee project.',
-  },
+  // {
+  //   title: 'Spekni',
+  //   description: 'Recognition platform built for developer endorsements',
+  //   image: 'https://placehold.co/40x40',
+  //   details: 'Detailed information about Spekni project.',
+  // },
+  // {
+  //   title: 'Rocketmeme',
+  //   description: 'Simple and intuitive meme generator',
+  //   image: 'https://placehold.co/40x40',
+  //   details: 'Detailed information about Rocketmeme project.',
+  // },
+  // {
+  //   title: 'Currencee',
+  //   description: "The world's most trusted, fast and secure currency converter",
+  //   image: 'https://placehold.co/40x40',
+  //   details: 'Detailed information about Currencee project.',
+  // },
 ];
 
 const Projects = () => {

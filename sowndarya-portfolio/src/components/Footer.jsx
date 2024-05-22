@@ -12,13 +12,13 @@ function Footer() {
         <div className="flex items-center justify-between">
           <p>&copy; 2024 sowndarya kp. All rights reserved.</p>
           <div className="flex gap-2">
-            <a href="#" className={`text-gray-700 text-1xl transition duration-300 transform hover:-translate-y-1 ${darkMode && "text-white"}`}>
+            <a href="https://www.linkedin.com/in/sowndarya-k-p/" className={`text-gray-700 text-1xl transition duration-300 transform hover:-translate-y-1 ${darkMode && "text-white"}`}>
               <FaLinkedin />
             </a>
             <a href="#" className={`text-gray-700 text-1xl transition duration-300 transform hover:-translate-y-1 ${darkMode && "text-white"}`}>
               <FaDribbble />
             </a>
-            <a href="#" className={`text-gray-700 text-1xl transition duration-300 transform hover:-translate-y-1 ${darkMode && "text-white"}`}>
+            <a href="https://github.com/Sowndaryakp" className={`text-gray-700 text-1xl transition duration-300 transform hover:-translate-y-1 ${darkMode && "text-white"}`}>
               <FaGithub />
             </a>
             <button onClick={toggleTheme} className="text-white-700 text-1xl transition duration-300 transform hover:-translate-y-1">
