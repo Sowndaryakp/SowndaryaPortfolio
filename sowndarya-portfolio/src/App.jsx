@@ -7,21 +7,27 @@ import WhatIDo from './components/WhatIDo';
 import Projects from './components/Projects';
 import ContactMe from './components/ContactMe';
 import Footer from './components/Footer';
+import { ThemeProvider } from './contexts/ThemeContext';
 import './index.css';
 
 function App() {
   return (
     <div >
-      <Navbar />
-      {/* Your other components go here */}
-      <UserInfo />
-      <div className=" h-screen bg-gray-100 flex items-center justify-center">
-      <SkillsInfo />
+     
+      <ThemeProvider>
+        <div className="App">
+        <Navbar />
+        {/* Your other components go here */}
+        <UserInfo />
+        <div className=" h-screen bg-gray-100 flex items-center justify-center">
+        <SkillsInfo />
+        </div>
+        <WhatIDo />
+        <Projects />
+        <ContactMe />
+          <Footer />
       </div>
-      <WhatIDo />
-      <Projects />
-      <ContactMe />
-      <Footer />
+    </ThemeProvider>
 
     </div>
   );

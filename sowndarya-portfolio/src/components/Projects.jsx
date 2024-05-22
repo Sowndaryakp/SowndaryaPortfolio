@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import { useTheme } from '../contexts/ThemeContext';
 
 const projects = [
   {
@@ -46,12 +47,9 @@ Technical Details:
   },
 ];
 
-const projectCardClasses = 'bg-white white:bg-gray-800 p-6 rounded-lg shadow-md flex items-center hover:bg-white-200 white:hover:bg-white-700 cursor-pointer transition-colors';
-const titleClasses = 'text-xl font-semibold';
-const descriptionClasses = 'text-white-800 white:text-gray-200';
-
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const { darkMode } = useTheme();
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -61,21 +59,24 @@ const Projects = () => {
     setSelectedProject(null);
   };
 
+  const projectCardClasses = darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800';
+  const descriptionClasses = darkMode ? 'text-gray-200' : 'text-gray-700';
+
   return (
-    <div className="bg-white-100 white:bg-white-900 text-gray-800 dark:text-gray-800 py-12">
+    <div id="projects" className={`py-12 ${darkMode ? 'bg-black' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold mb-4">Projects</h2>
-        <p className="mb-8">
+        <h2 className={`text-3xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>Projects</h2>
+        <p className={`mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-800'}`}>
           I've worked on tons of little projects over the years but these are the ones that I'm most
           proud of. Many of them are open-source, so if you see something that piques your interest,
           check out the code and contribute if you have ideas on how it can be improved.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <div key={index} className={projectCardClasses} onClick={() => openModal(project)}>
+            <div key={index} className={`p-6 rounded-lg shadow-md flex items-center hover:bg-white-200 ${projectCardClasses}`} onClick={() => openModal(project)}>
               <img src={project.image} alt={project.title} className="w-10 h-10 mr-4" />
               <div>
-                <h3 className={titleClasses}>{project.title}</h3>
+                <h3 className="text-xl font-semibold">{project.title}</h3>
                 <p className={descriptionClasses}>{project.description}</p>
                 {/* Wrap the entire content of the card in a clickable element */}
                 <div onClick={() => openModal(project)} className="cursor-pointer">
@@ -88,7 +89,7 @@ const Projects = () => {
       </div>
       {selectedProject && (
         <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white white:bg-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full relative">
+          <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full relative">
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 text-gray-800 dark:text-gray-200"
@@ -101,6 +102,7 @@ const Projects = () => {
           </div>
         </div>
       )}
+      <hr className="mt-28 "/>
     </div>
   );
 };
