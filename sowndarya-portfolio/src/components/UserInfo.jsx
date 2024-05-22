@@ -60,6 +60,15 @@ const UserInfo = () => {
     };
   }, []);
 
+  const handleResumeDownload = () => {
+    const path = '/resumes/pdffile.pdf'; // Update the path if necessary
+    const link = document.createElement('a');
+    link.href = path;
+    link.download = 'resume.pdf'; // Set the desired filename for the downloaded file
+    link.click();
+  };
+  
+
   return (
     <div id="user-info" className={`w-full h-full ${darkMode ? 'bg-black' : 'bg-white'}`}>
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-32`}>
@@ -92,6 +101,14 @@ const UserInfo = () => {
                 >
                   Contact Me
                 </button>
+                <button
+                ref={seeMyWorksRef}
+                onClick={handleResumeDownload}
+                className={`bg-pink-500 text-white font-semibold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 hover:bg-pink-700 hover:text-white transition-colors duration-200 mt-4 md:mt-0 ml-4 md:ml-0 mr-4 md:mr-8 ${darkMode ? 'hover:bg-pink-700' : 'hover:bg-pink-600'}`}
+              >
+                Resume
+              </button>
+
               </div>
             </div>
           </div>
