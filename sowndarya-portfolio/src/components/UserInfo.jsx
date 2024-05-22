@@ -6,10 +6,12 @@ const UserInfo = () => {
   const { darkMode } = useTheme(); 
   const seeMyWorksRef = useRef(null);
   const contactMeRef = useRef(null);
+  const resumeDownloadRef = useRef(null);
 
   useEffect(() => {
     const seeMyWorksButton = seeMyWorksRef.current;
     const contactMeButton = contactMeRef.current;
+    const resumeDownloadButton = resumeDownloadRef.current;
 
     gsap.fromTo(
       seeMyWorksButton,
@@ -45,11 +47,31 @@ const UserInfo = () => {
       }
     );
 
+    gsap.fromTo(
+      resumeDownloadButton,
+      { y: 0 },
+      {
+        y: -10,
+        duration: 0.3,
+        paused: true,
+        ease: "power1.out",
+        onStart: () => {
+          resumeDownloadButton.style.transition = "transform 0.3s ease-out";
+        },
+        onReverseComplete: () => {
+          resumeDownloadButton.style.transition = "";
+        }
+      }
+    );
+
     seeMyWorksButton.addEventListener('mouseenter', () => gsap.to(seeMyWorksButton, { y: -10 }));
     seeMyWorksButton.addEventListener('mouseleave', () => gsap.to(seeMyWorksButton, { y: 0 }));
 
     contactMeButton.addEventListener('mouseenter', () => gsap.to(contactMeButton, { y: -10 }));
     contactMeButton.addEventListener('mouseleave', () => gsap.to(contactMeButton, { y: 0 }));
+
+    resumeDownloadButton.addEventListener('mouseenter', () => gsap.to(resumeDownloadButton, { y: -10 }));
+    resumeDownloadButton.addEventListener('mouseleave', () => gsap.to(resumeDownloadButton, { y: 0 }));
 
     return () => {
       seeMyWorksButton.removeEventListener('mouseenter', () => gsap.to(seeMyWorksButton, { y: -10 }));
@@ -57,6 +79,9 @@ const UserInfo = () => {
 
       contactMeButton.removeEventListener('mouseenter', () => gsap.to(contactMeButton, { y: -10 }));
       contactMeButton.removeEventListener('mouseleave', () => gsap.to(contactMeButton, { y: 0 }));
+
+      resumeDownloadButton.removeEventListener('mouseenter', () => gsap.to(resumeDownloadButton, { y: -10 }));
+      resumeDownloadButton.removeEventListener('mouseleave', () => gsap.to(resumeDownloadButton, { y: 0 }));
     };
   }, []);
 
@@ -102,7 +127,7 @@ const UserInfo = () => {
                   Contact Me
                 </button>
                 <button
-                ref={seeMyWorksRef}
+                ref={resumeDownloadRef}
                 onClick={handleResumeDownload}
                 className={`bg-pink-500 text-white font-semibold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 hover:bg-pink-700 hover:text-white transition-colors duration-200 mt-4 md:mt-0 ml-4 md:ml-0 mr-4 md:mr-8 ${darkMode ? 'hover:bg-pink-700' : 'hover:bg-pink-600'}`}
               >
