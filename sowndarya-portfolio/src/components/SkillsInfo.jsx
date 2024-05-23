@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { FaHtml5, FaCss3, FaJava, FaDatabase, FaReact, FaNodeJs, FaJsSquare, FaVuejs, FaPython } from 'react-icons/fa';
-import { SiSpring, SiHibernate, SiPostgresql, SiJavascript, SiGithub } from 'react-icons/si';
+import { SiSpring, SiHibernate, SiPostgresql, SiJavascript, SiGithub, SiPostman } from 'react-icons/si';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTheme } from '../contexts/ThemeContext';
@@ -48,6 +48,7 @@ const SkillsCard = () => {
     { name: 'React Js', icon: <FaReact className={darkMode ? 'text-cyan-300' : 'text-cyan-500'} size={50} /> },
     { name: 'Axios', icon: <FaJsSquare className={darkMode ? 'text-yellow-300' : 'text-yellow-500'} size={50} /> },
     { name: 'GitHub', icon: <SiGithub className={darkMode ? 'text-gray-500' : 'text-gray-800'} size={50} /> },
+    { name: 'RESTful API', icon: <SiPostman className={darkMode ? 'text-orange-300' : 'text-orange-500'} size={50} /> }, // Added skill
   ];
 
   return (
@@ -64,9 +65,8 @@ const SkillsCard = () => {
           </div>
         ))}
       </div>
-      <hr className="mt-16"/>
+      <hr className={`mt-16 ${darkMode ? 'border-gray-700' : 'border-gray-300'}`} />
     </div>
-    
   );
 };
 

@@ -1,32 +1,44 @@
 // Projects.js
 import React from 'react';
-import { useTheme } from '../contexts/ThemeContext'; 
+import { useTheme } from '../contexts/ThemeContext';
 
 const Education = () => {
-    const { darkMode } = useTheme();
-    const recentEngineeringGrads = [
-        { id: 1, collegeName: 'G Madegowda Institue Of Technology, Mandya.', batch: '2017-2021', program: 'B.Tech Computer Science and Engineering' },
-        // Add more recent engineering graduates data as needed
-    ];
-    return (
-        <div className={`container mx-auto px-4 py-8 ${darkMode ? 'bg-black text-white' : 'bg-white text-gray-800'}` }>
-            <h2 className="text-3xl font-bold mb-4">Education</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div className="max-w-4xl mx-auto justify-center " >
-                    {recentEngineeringGrads.map((graduate) => (
-                        <div key={graduate.id} className={`${darkMode ? 'bg-black text-white' : 'bg-white text-gray-800'} rounded-lg overflow-hidden shadow-md mb-4`}>
-                            <div className="p-4">
-                                <h2 className="text-lg font-semibold">{graduate.collegeName}</h2>
-                                <p className="text-sm text-gray-600 text-center">Batch: {graduate.batch}</p>
-                                <p className="text-sm text-gray-600 text-center">Program: {graduate.program}</p>
-                                {/* Add more details about the graduate */}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+  const { darkMode } = useTheme();
+  const recentEngineeringGrads = [
+    {
+      id: 1,
+      collegeName: 'G Madegowda Institute Of Technology, Mandya, Karnataka',
+      batch: '2017-2021',
+      ug: 'Bachelor of Engineering',
+      branch: 'Computer Science and Engineering'
+    },
+    // Add more recent engineering graduates data as needed
+  ];
+
+  const containerClasses = darkMode ? 'bg-black text-white' : 'bg-white text-gray-800';
+  const cardClasses = darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800';
+  const descriptionClasses = darkMode ? 'text-gray-200' : 'text-gray-700';
+
+  return (
+    <div id="education-info" className={`py-12 ${containerClasses}`}>
+      <div className="p-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className={`text-3xl font-extrabold mb-8 ${darkMode ? 'text-white' : 'text-gray-800'}`}>Education</h2>
+        <div className="flex flex-wrap justify-center gap-6">
+          {recentEngineeringGrads.map((graduate) => (
+            <div key={graduate.id} className={`w-full max-w-sm p-6 rounded-lg shadow-lg ${cardClasses}`}>
+              <h3 className="text-xl font-semibold mb-4">{graduate.collegeName}</h3>
+              <p className={`text-md mb-2 ${descriptionClasses}`}><b>Batch:</b> {graduate.batch}</p>
+              <p className={`text-md mb-2 ${descriptionClasses}`}><b>UG:</b> {graduate.ug}</p>
+              <p className={`text-md ${descriptionClasses}`}><b>Branch:</b> {graduate.branch}</p>
+              
+              {/* Add more details about the graduate */}
             </div>
+          ))}
         </div>
-    );
+      </div>
+      <hr className={`mt-20 ${darkMode ? 'border-gray-700' : 'border-gray-300'}`} />
+    </div>
+  );
 };
 
 export default Education;

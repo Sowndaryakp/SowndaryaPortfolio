@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import UserInfo from './components/UserInfo';
 import Education from './components/Education';
 import SkillsInfo from './components/SkillsInfo';
+import Certificates from './components/Certificates';
 import WhatIDo from './components/WhatIDo';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
@@ -27,6 +28,7 @@ function App() {
         </div>
         {/* <WhatIDo /> */}
         <Projects />
+        <Certificates />
         <Experience />
         <ContactMe />
           <Footer />
