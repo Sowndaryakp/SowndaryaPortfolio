@@ -1,2 +1,2 @@
 # SowndaryaPortfolio
-My Portfolio
+SowndaryaKP Portfolio using React.js and tailwind css 
