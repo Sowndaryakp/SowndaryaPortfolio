@@ -52,7 +52,7 @@ const Experiences = () => {
   const { darkMode } = useTheme();
 
   const containerClasses = darkMode ? 'bg-black text-white' : 'bg-white text-gray-800';
-  const cardClasses = darkMode ? 'bg-gray-800 text-white shadow-md' : 'bg-white text-gray-800 shadow-md';
+  const cardClasses = darkMode ? 'bg-black-800 text-white shadow-md' : 'bg-white text-gray-800 shadow-md';
 
   const descriptionClasses = darkMode ? 'text-gray-200' : 'text-gray-700';
 
@@ -65,7 +65,7 @@ const Experiences = () => {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
           {experiences.map((experience, index) => (
-            <div key={index} className={`relative w-full p-6 md:p-8 ${cardClasses}`}>
+            <div key={index} className={`border border-gray-300 rounded-lg shadow-lg relative w-full p-6 md:p-8 transition-shadow duration-300 ease-in-out hover:shadow-2xl ${cardClasses}`}>
               <h3 className="text-xl font-semibold mb-2">{experience.title}</h3>
               {experience.company && (
                 <div className="mb-4">
@@ -94,3 +94,4 @@ const Experiences = () => {
 };
 
 export default Experiences;
+//transition-shadow duration-300 ease-in-out hover:shadow-2xl

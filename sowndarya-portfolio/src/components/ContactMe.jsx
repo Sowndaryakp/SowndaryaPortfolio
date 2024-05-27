@@ -6,7 +6,7 @@ function ContactMe() {
   return (
     <section id="contact-me" className={`py-12 ${darkMode ? 'bg-black text-white' : 'bg-white text-gray-800'}`}>
       <div className="container mx-auto px-4">
-        <div className={`max-w-4xl mx-auto shadow-md rounded-lg p-8 ${darkMode ? 'bg-gray-900' : 'bg-pink-100'}`}>
+        <div className={`border border-gray-300 rounded-lg shadow-lg max-w-4xl mx-auto shadow-md rounded-lg p-8 ${darkMode ? 'bg-black-900' : 'bg-pink-100'}`}>
           <div className="flex items-center justify-center mb-6">
             {/* Your email SVG logo goes here */}
             <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
