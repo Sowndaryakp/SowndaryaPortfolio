@@ -20,11 +20,11 @@ const Certificates = () => {
   return (
     <div id="certificates" className={`w-full h-full ${darkMode ? 'bg-black' : 'bg-white'}`}>
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-32`}>
-        <h2 className="text-2xl md:text-4xl font-bold text-center mb-8 text-charm-800">Certificates</h2>
+        <h2 className="text-2xl md:text-4xl font-bold text-center mb-8 text-white-800">Certificates</h2>
         <div className="flex justify-center items-center">
           <div
             onClick={togglePopup}
-            className={`w-64 h-64 ${darkMode ? 'bg-charm-800 text-charm-50' : 'bg-charm-200 text-charm-800'} border border-charm-300 rounded-lg shadow-lg flex justify-center items-center cursor-pointer`}
+            className={`w-64 h-64 ${darkMode ? 'bg-white-800 text-charm-50' : 'bg-white-200 text-black-800'} border border-white-300 rounded-lg shadow-lg flex justify-center items-center cursor-pointer hover:shadow-white`}
           >
             <p className="text-center">
               <span className="text-xl md:text-2xl font-bold">{certificateDetails.name}</span>
@@ -35,7 +35,7 @@ const Certificates = () => {
               <br />
               <span>Type: {certificateDetails.type}</span>
               <p className="text-center mt-4">
-              <button className="text-blue-500 hover:underline" onClick={togglePopup}>
+              <button className="text-blue-500 hover:underline" onClick={(e) => { e.stopPropagation(); togglePopup(); }}>
                 Click here to view image
               </button>
             </p>
