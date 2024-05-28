@@ -60,13 +60,13 @@ function Navbar() {
             </ScrollLink> */}
           </div>
           <div className="flex items-center gap-4 mt-96 md:mt-0">
-            <a href="https://www.linkedin.com/in/sowndarya-k-p/" className={`text-gray-700 text-2xl transition duration-300 transform hover:-translate-y-1 ${darkMode ? 'text-white' : ''}`} onClick={closeMobileMenu}>
+            <a href="https://www.linkedin.com/in/sowndarya-k-p/" target="_blank" rel="noopener noreferrer" className={`text-gray-700 text-2xl transition duration-300 transform hover:-translate-y-1 ${darkMode ? 'text-white' : ''}`} onClick={closeMobileMenu}>
               <FaLinkedin />
             </a>
-            <a href="#" className={`text-gray-700 text-2xl transition duration-300 transform hover:-translate-y-1 ${darkMode ? 'text-white' : ''}`} onClick={closeMobileMenu}>
+            <a href="#" target="_blank" rel="noopener noreferrer"  className={`text-gray-700 text-2xl transition duration-300 transform hover:-translate-y-1 ${darkMode ? 'text-white' : ''}`} onClick={closeMobileMenu}>
               <FaDribbble />
             </a>
-            <a href="#" className={`text-gray-700 text-2xl transition duration-300 transform hover:-translate-y-1 ${darkMode ? 'text-white' : ''}`} onClick={closeMobileMenu}>
+            <a href="https://github.com/Sowndaryakp" target="_blank" rel="noopener noreferrer" className={`text-gray-700 text-2xl transition duration-300 transform hover:-translate-y-1 ${darkMode ? 'text-white' : ''}`} onClick={closeMobileMenu}>
               <FaGithub />
             </a>
             <button onClick={toggleTheme} className={`text-2xl  ${darkMode ? 'text-gray-300' : 'text-zinc-600'} text-white transition duration-300 transform hover:-translate-y-1`}>

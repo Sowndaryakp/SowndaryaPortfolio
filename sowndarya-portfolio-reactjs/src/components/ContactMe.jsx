@@ -1,8 +1,29 @@
-import React from 'react';
+import React,{ useRef } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
+import emailjs from '@emailjs/browser';
 
 function ContactMe() {
   const { darkMode } = useTheme();
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_w3lpjix', 'template_ileim2q', form.current, {
+        publicKey: 'w0yr-lj0VLfqCwyH2',
+      })
+      .then(
+        (result) => {
+          console.log('SUCCESS SENT MESSAGE!',result.text);
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
+
+
   return (
     <section id="contact-me" className={`py-12 ${darkMode ? 'bg-black text-white' : 'bg-white text-gray-800'}`}>
       <div className="container mx-auto px-4">
@@ -15,13 +36,13 @@ function ContactMe() {
             </svg>
           </div>
           <h2 className="text-3xl font-semibold mb-6">Contact Me</h2>
-          <form>
+          <form ref={form} onSubmit={sendEmail}>
             <div className="mb-4 flex">
               <div className="w-1/2 mr-2">
                 <input 
                   type="text" 
                   id="name" 
-                  name="name" 
+                  name="user_name" 
                   placeholder="Name *" 
                   required 
                   className={`mt-1 p-2 border rounded-md w-full focus:outline-none ${darkMode ? 'bg-gray-800 text-white border-gray-600' : 'border-gray-300'}`}
@@ -31,7 +52,7 @@ function ContactMe() {
                 <input 
                   type="email" 
                   id="email" 
-                  name="email" 
+                  name="user_email" 
                   placeholder="Email *" 
                   required 
                   className={`mt-1 p-2 border rounded-md w-full focus:outline-none ${darkMode ? 'bg-gray-800 text-white border-gray-600' : 'border-gray-300'}`}
@@ -49,6 +70,8 @@ function ContactMe() {
               ></textarea>
             </div>
             <button 
+            type="submit"
+            value="send"
               className={`py-4 px-6 rounded-full font-semibold border focus:outline-none transition-colors duration-200 ${darkMode ? 'bg-gray-800 text-white border-white hover:bg-charm-500 hover:text-white' : 'bg-white text-charm-600 border-charm-600 hover:bg-charm-500 hover:text-white'}`}
             >
               Send Message
