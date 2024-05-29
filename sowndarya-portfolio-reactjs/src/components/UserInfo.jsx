@@ -96,7 +96,7 @@ const UserInfo = () => {
   };
 
   return (
-    <div id="user-info" className={`p-12 w-full h-full ${darkMode ? 'bg-black' : 'bg-white'}`}>
+    <div id="user-info" className={`p-4 w-full h-full ${darkMode ? 'bg-black' : 'bg-white'}`}>
     <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-32`}>
       <div className="flex flex-col md:flex-row items-center">
         <div className="flex-1 flex justify-center md:justify-start mb-6 md:mb-0">
@@ -110,9 +110,12 @@ const UserInfo = () => {
         </div>
         <div className="flex-1 md:ml-16">
           <div className="space-y-6 text-center md:text-left">
-            <h1 className={`text-4xl md:text-6xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>I'm Fullstack Web Developer.</h1>
-            <p className={`text-lg md:text-2xl mt-4 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Hi there! I'm Sowndarya K P, showcasing my proficiency in Fullstack Web Development through a carefully curated display of advanced projects, technical skills, and career accomplishments. With years of hands-on experience, my aim is to build credibility, forge valuable industry relationships, and explore avenues for collaboration and career growth in the realm of software engineering.
+            {/* <h1 className={`text-4xl md:text-6xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>I'm Fullstack Web Developer.</h1> */}
+            <h1 className={`text-4xl md:text-6xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>Hi there!<br/> I'm Sowndarya K P</h1>
+            <p className={`text-lg md:text-1xl mt-4 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+            Welcome to my professional portfolio, where I showcase my proficiency in Fullstack Web Development through a carefully curated display of advanced projects, technical skills, and career accomplishments. With years of hands-on experience, my aim is to build credibility, forge valuable industry relationships, and explore avenues for collaboration and career growth in the realm of software engineering.
+            <br/><br/>
+            Explore my portfolio to see the innovative solutions I've developed, the technologies I specialize in, and the professional milestones I've achieved. Let's connect and create something amazing together!
             </p>
             <div className="flex flex-row justify-center md:justify-start mt-6 space-x-4">
               <button

@@ -35,7 +35,7 @@ const projects = [
       </ul>
     `,
   },
-  // Add more projects here if needed
+  //GERBINDIA, SMART METROLOGY< REPORT, INVENTORY MANAGEMENT SYSTEM, TODO APP REACTJS-FIREBASE,
 ];
 
 const Projects = () => {
@@ -60,7 +60,7 @@ const Projects = () => {
       <div className="p-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className={`text-3xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>Projects</h2>
         <p className={`mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-800'}`}>
-          I've worked on numerous projects over the years, but these are the ones I'm most proud of. Many are open-source, so if something catches your eye, feel free to check out the code and contribute your ideas for improvement.
+        Below are some of the advanced projects I have developed, showcasing my expertise and versatility in Fullstack Web Development. Each project reflects my commitment to creating efficient, scalable, and user-friendly applications.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (

@@ -1,8 +1,6 @@
-import React, { useRef } from 'react';
+import React,{ useRef } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 import emailjs from '@emailjs/browser';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 function ContactMe() {
   const { darkMode } = useTheme();
@@ -12,19 +10,19 @@ function ContactMe() {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_w3lpjix', 'template_ileim2q', form.current, 'w0yr-lj0VLfqCwyH2')
+      .sendForm('service_w3lpjix', 'template_ileim2q', form.current, {
+        publicKey: 'w0yr-lj0VLfqCwyH2',
+      })
       .then(
         (result) => {
-          console.log('SUCCESS SENT MESSAGE!', result.text);
-          toast.success('Message sent successfully!');
-          form.current.reset();
+          console.log('SUCCESS SENT MESSAGE!',result.text);
         },
         (error) => {
           console.log('FAILED...', error.text);
-          toast.error('Failed to send message.');
         },
       );
   };
+
 
   return (
     <section id="contact-me" className={`py-12 ${darkMode ? 'bg-black text-white' : 'bg-white text-gray-800'}`}>
@@ -62,15 +60,6 @@ function ContactMe() {
               </div>
             </div>
             <div className="mb-4">
-              <input 
-                type="tel" 
-                id="phone" 
-                name="user_phone" 
-                placeholder="Phone (optional)" 
-                className={`mt-1 p-2 border rounded-md w-full focus:outline-none ${darkMode ? 'bg-gray-800 text-white border-gray-600' : 'border-gray-300'}`}
-              />
-            </div>
-            <div className="mb-4">
               <textarea 
                 id="message" 
                 name="message" 
@@ -81,15 +70,16 @@ function ContactMe() {
               ></textarea>
             </div>
             <button 
-              type="submit"
+            type="submit"
+            value="send"
               className={`py-4 px-6 rounded-full font-semibold border focus:outline-none transition-colors duration-200 ${darkMode ? 'bg-gray-800 text-white border-white hover:bg-charm-500 hover:text-white' : 'bg-white text-charm-600 border-charm-600 hover:bg-charm-500 hover:text-white'}`}
             >
               Send Message
             </button>
+
           </form>
         </div>
       </div>
-      <ToastContainer />
     </section>
   );
 }
