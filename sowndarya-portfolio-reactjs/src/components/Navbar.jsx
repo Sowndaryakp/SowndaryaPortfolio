@@ -4,6 +4,7 @@ import { FaDribbble, FaGithub, FaLinkedin, FaBars, FaTimes } from 'react-icons/f
 import { useTheme } from '../contexts/ThemeContext'; 
 import { FaSun as SunIcon, FaMoon as MoonIcon } from 'react-icons/fa';
 import { Link as ScrollLink } from 'react-scroll';
+import soniImage from '../assets/images/soni.png'; 
 
 function Navbar() {
   const { darkMode, toggleTheme } = useTheme(); 
@@ -21,11 +22,15 @@ function Navbar() {
   return (
     <header className={`fixed top-0 left-0 w-full z-50 bg-${darkMode ? 'black' : 'white'} shadow-lg`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-        <div className="flex-1 flex items-center">
-          <a href="#" className={`text-2xl font-bold ${darkMode ? 'text-gray-300' : 'text-zinc-600'}`}>
-            Sowndarya K P
-          </a>
-        </div>
+      <div className="flex-1 flex items-center justify-start space-x-4">
+        <a href="#" className="text-2xl mt-4 font-bold">
+          <img src={soniImage} alt="Soni Logo" className="h-28 w-36" />
+        </a>
+        <a href="#" className={`text-2xl font-bold ${darkMode ? 'text-gray-300' : 'text-zinc-600'}`}>
+          Sowndarya K P
+        </a>
+      </div>
+
         <nav className={`bg-${darkMode ? 'black' : 'white'} fixed top-0 left-0 w-64 h-screen z-20 transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 md:static md:flex md:items-center md:space-x-8 md:w-auto md:h-auto md:bg-transparent md:translate-x-0`}>
           <div className="flex justify-between items-center w-full p-4 md:hidden">
             <a href="#" className={`text-2xl font-bold ${darkMode ? 'text-gray-300' : 'text-zinc-600'}`}>Sowndarya K P</a>
@@ -33,7 +38,7 @@ function Navbar() {
               {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
-          <div className="flex flex-col space-y-4 mt-4 md:mt-0 md:flex-row md:space-y-0 md:space-x-8 ml-4">
+          <div className="flex flex-col space-y-4 mt-4 md:mt-0 md:flex-row md:space-y-0 md:space-x-6 ml-4">
             <ScrollLink to="user-info" smooth={true} duration={500} className={`text-base font-medium ${darkMode ? 'text-gray-300' : 'text-zinc-500'} hover:text-pink-500`} onClick={closeMobileMenu}>
               About
             </ScrollLink>
