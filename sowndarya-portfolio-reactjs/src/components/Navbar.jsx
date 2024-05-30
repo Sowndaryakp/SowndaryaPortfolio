@@ -22,7 +22,7 @@ function Navbar() {
   return (
     <header className={`fixed top-0 left-0 w-full z-50 bg-${darkMode ? 'black' : 'white'} shadow-lg`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-      <div className="flex-1 flex items-center justify-start space-x-1">
+      <div className="flex-1 flex items-center justify-start -space-x-7">
         <a href="#" className="text-2xl mt-4 font-bold">
           <img src={soniImage} alt="Soni Logo" className="h-28 w-52" />
         </a>
