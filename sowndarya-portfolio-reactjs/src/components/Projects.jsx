@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { useTheme } from '../contexts/ThemeContext';
 import todoreactImage from '../assets/images/todoreact.png';
+import gerbindia1 from '../assets/images/gerbindia1.png';
 
 const projects = [
   {
-    title: 'Todo App in ReactJS, Tailwind CSS and Firebase',
+    title: 'Todo App in ReactJS, Tailwind CSS, and Firebase',
     description: 'A simple Todo app built with ReactJS and Tailwind CSS',
     image: todoreactImage,
     details: `
@@ -16,26 +17,59 @@ const projects = [
       <ul>
         <li>ReactJS (Hooks)</li>
         <li>Tailwind CSS</li>
-        <li>State management</li>
-        <li>Event handling</li>
+        <li>Firebase integration for data management</li>
+        <li>State management within React</li>
+        <li>Event handling for user interactions</li>
       </ul><br />
 
       <strong>Challenges:</strong><br />
       <ul>
-        <li>Implementing state management for Todo items</li>
-        <li>Styling components with Tailwind CSS</li>
-        <li>Handling user interactions (adding, deleting, completing tasks)</li>
+        <li>Implementing state management to handle Todo items efficiently.</li>
+        <li>Styling components effectively using Tailwind CSS to ensure a visually appealing interface.</li>
+        <li>Managing user interactions such as adding, deleting, and marking tasks as completed in a seamless manner.</li>
       </ul><br />
 
       <strong>Learning:</strong><br />
       <ul>
-        <li>React Hooks for state management</li>
-        <li>Advanced Tailwind CSS techniques</li>
-        <li>Best practices for building Todo applications</li>
+        <li>Understanding and utilizing React Hooks for efficient state management within the application.</li>
+        <li>Exploring advanced Tailwind CSS techniques to enhance the visual presentation of components.</li>
+        <li>Adopting best practices for building Todo applications, including handling data storage and user interactions effectively.</li>
       </ul>
     `,
   },
-  //GERBINDIA, SMART METROLOGY< REPORT, INVENTORY MANAGEMENT SYSTEM, TODO APP REACTJS-FIREBASE,
+  {
+    title: 'IOT-based Solution for Machine Monitoring [GerbIndia]',
+    description: 'Develop a frontend web application for a machine monitoring dashboard.',
+    image: gerbindia1,
+    details: `
+      <strong>Problem Statement:</strong><br />
+      Develop a frontend web application for a machine monitoring dashboard.<br /><br />
+
+      <strong>Technical Skills:</strong><br />
+      <ul>
+        <li>Proficiency in HTML5, CSS3, Tailwind CSS, JavaScript, and Vue.js for frontend development.</li>
+        <li>Dynamic data fetching from the backend using the Axios library.</li>
+        <li>Experience in modern frontend technologies, particularly Vue.js and Axios.</li>
+        <li>Skills in responsive design and user interface development.</li>
+        <li>Integration of various frontend libraries and frameworks.</li>
+      </ul><br />
+
+      <strong>Challenges:</strong><br />
+      <ul>
+        <li>Creating a responsive and visually appealing user interface for the machine monitoring dashboard.</li>
+        <li>Successfully integrating Axios for seamless data communication with the backend.</li>
+        <li>Ensuring a user-friendly experience by implementing best practices in frontend development.</li>
+      </ul><br />
+
+      <strong>Learning:</strong><br />
+      <ul>
+        <li>Enhanced proficiency in Vue.js and Axios through practical application in a real-world project.</li>
+        <li>Improved skills in responsive design and user interface development.</li>
+        <li>Hands-on experience in integrating frontend libraries and frameworks to enhance application functionality and performance.</li>
+      </ul>
+    `,
+  },
+  // Add other projects here
 ];
 
 const Projects = () => {
